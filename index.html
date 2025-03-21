@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment-06</title>
+
+    <!-- css and google font-->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Bangla:ital@0;1&display=swap");
+
+      .poppins {
+        font-family: "Poppins", sans-serif;
+      }
+      .hind {
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      .tiro {
+        font-family: "Tiro Bangla", serif;
+      }
+      .inter {
+        font-family: "Inter", sans-serif;
+      }
+      header {
+        backdrop-filter: blur(40px);
+        background: linear-gradient(
+            178.08deg,
+            rgba(255, 255, 255, 0.3) -28.101%,
+            rgba(0, 0, 0, 0) 128.101%
+          ),
+          linear-gradient(
+            169.25deg,
+            rgba(255, 255, 255, 0.05) 24.246%,
+            rgba(0, 0, 0, 0) 24.246%
+          );
+      }
+      .active {
+        background-color: #422ad5;
+        color: white;
+      }
+    </style>
+
+    <!-- tailwind and daisyUi -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+    <!-- sweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- font-awesome -->
+    <script
+      src="https://kit.fontawesome.com/16c1f8b86a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- header section -->
+    <header
+      id="header"
+      class="hidden container max-w-screen border-b-2 border-[#C6BDBD] py-8 sticky top-0 z-10"
+    >
+      <nav
+        class="xl:max-w-[1045px] 2xl:max-w-[1760px] mx-auto flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between items-center"
+      >
+        <!-- logo -->
+        <div>
+          <h1 class="flex items-center">
+            <span class="poppins text-xl text-[#18181B] font-semibold"
+              >English</span
+            >
+            <span class="w-10 h-10 border-2 border-dashed border-gray-400"
+              ><img class="object-cover" src="./assets/logo.png" alt="nav-logo"
+            /></span>
+            <span class="tiro text-xl text-[#000000] font-normal">জানালা</span>
+          </h1>
+        </div>
+        <!-- navmenu -->
+        <div class="flex gap-2">
+          <a
+            class="flex items-center gap-1 border border-[#422AD5] px-2 py-2 rounded poppins text-sm text-[#422AD5] hover:bg-[#422AD5] hover:text-white font-semibold cursor-pointer"
+            href="#faq"
+            ><i class="fa-solid fa-circle-info"></i><span>FAQ</span></a
+          >
+          <a
+            class="flex items-center gap-1 border border-[#422AD5] px-2 py-2 rounded poppins text-sm text-[#422AD5] hover:bg-[#422AD5] hover:text-white font-semibold cursor-pointer"
+            href="#learn"
+            ><i class="fa-solid fa-book-open"></i><span>Learn</span></a
+          >
+          <a
+            id="logout"
+            class="flex items-center gap-1 border border-[#422AD5] px-2 py-2 rounded poppins text-sm text-[#422AD5] hover:bg-[#422AD5] hover:text-white font-semibold cursor-pointer"
+            href="#"
+            ><i class="fa-solid fa-arrow-right-from-bracket"></i
+            ><span>Logout</span></a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-- main section -->
+    <main>
+      <!-------------------------------------hero section-------------------------------------->
+      <section
+        id="banner"
+        class="xl:max-w-[1045px] 2xl:max-w-[1760px] mx-auto flex flex-col-reverse lg:flex-row justify-between items-center select-none"
+      >
+        <!-- details container -->
+        <div class="space-y-6 px-4 lg:px-0">
+          <h1 class="poppins text-4xl lg:text-5xl  font-bold text-[#18181B]">
+            <span class="text-[#00BCFF]">English</span> is Easy!!
+          </h1>
+          <p
+            class="max-w-[727px] hind text-xl lg:text-2xl text-[#18181B] font-medium opacity-[0.8px]"
+          >
+            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+            আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
+            অন্য একটি Level এ
+          </p>
+          <!-- input container -->
+          <div class="flex flex-col gap-5 z-0">
+            <input
+              id="name"
+              type="text"
+              placeholder="Enter Your Name"
+              class="input border border-[#18181B33] rounded bg-[#FFFFFF]"
+            />
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter Login Code (123456)"
+              class="input input border border-[#18181B33] rounded"
+            />
+          </div>
+          <!-- button -->
+          <div>
+            <button
+              id="banner-btn"
+              class="btn btn-primary border border-[#422AD5]"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+        <!-- image container -->
+        <div class="mr-10 py-12 px-4 lg:px-0">
+          <img
+            class="object-cover"
+            src="./assets/hero-student.png"
+            alt="student-image"
+          />
+        </div>
+      </section>
+
+      <!------------------------------vocabularies section---------------------------------------->
+      <section
+        id="learn"
+        class="hidden mt-3 lg:mt-1 scroll-mt-48 lg:scroll-mt-28 xl:max-w-[1045px] 2xl:max-w-[1760px] mx-auto flex-col justify-center items-center select-none"
+      >
+        <!-- title -->
+        <h1 class="poppins text-center text-3xl lg:text-4xl text-[#18181B] font-bold">
+          <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+        </h1>
+        <!-- buttons container -->
+        <div id="level-btn-container" class="mt-9 grid grid-cols-3 lg:grid-cols-7 gap-2 lg:gap-5 px-4"></div>
+        <!----------------------------spinner section----------------------->
+        <section id="spinner" class="hidden mt-8 text-center">
+          <span class="loading loading-dots loading-3xl"></span>
+        </section>
+        <!--no lesson section -->
+      <div class="w-full px-4 lg:px-0">
+        <div
+        id="no-lessons"
+        class="mt-10 bg-[#F8F8F8] w-full flex flex-col justify-center items-center gap-3 rounded-3xl"
+      >
+        <p class="mt-[64px] hind text-xl text-[#79716B] font-normal">
+          আপনি এখনো কোন Lesson Select করেন নি
+        </p>
+        <h4 class="mb-[64px] text-center lg:text-start hind text-[34px] text-[#292524] font-medium">
+          একটি Lesson Select করুন।
+        </h4>
+      </div>
+      </div>
+        <!-- specific lessons is not found -->
+        <div class="w-full px-4 lg:px-0">
+          <div
+          id="not-found-lesson"
+          class="hidden mt-10 bg-[#F8F8F8] w-full flex-col justify-center items-center gap-3 rounded-3xl"
+        >
+          <img
+            class="mt-[74px] border-2 border-dashed border-gray-400"
+            src="./assets/alert-error.png"
+            alt="logo"
+          />
+          <p class="hind text-xl text-[#79716B] font-normal">No Word Found</p>
+          <h4 class="mb-[74px] hind text-[34px] text-[#292524] font-medium">
+            নেক্সট Lesson এ যান
+          </h4>
+        </div>
+        </div>
+        <!-- cards container for lession -->
+        <div
+          id="cards-container"
+          class="hidden mt-10 w-full bg-[#F8F8F8] rounded-3xl grid-cols-1 lg:grid-cols-3 gap-7 px-7 py-7"
+        ></div>
+      </section>
+      <!-----------------------------------------modal sectio---------------------------------------------------->
+      <section>
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+        <dialog id="my_modal_1" class="modal">
+          <div class="modal-box max-w-[735px]">
+            <!-- details container -->
+            <div
+              class="space-y-8 border-[2px] border-solid border-[#EDF7FF] p-3 rounded-xl"
+            >
+              <div id="modal-details" class="space-y-8"></div>
+              <!-- syn -->
+              <div id="synonym-container" class="space-y-[10px]">
+                <p
+                  class="hind font-medium text-2xl text-[#000000] opacity-[0.8px]"
+                >
+                  সমার্থক শব্দ গুলো
+                </p>
+                <div id="syn-container" class="flex space-x-4"></div>
+              </div>
+            </div>
+
+            <div class="modal-action">
+              <form method="dialog" class="w-full flex justify-start">
+                <!-- if there is a button in form, it will close the modal -->
+                <button
+                  class="btn btn-primary font-medium text-2xl rounded-xl px-5 h-[52px] text-center"
+                >
+                  <span>Complete Learning</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </section>
+      <!--------------------------------------------------FAQ section----------------------------------------------------->
+      <section
+        id="faq"
+        class="hidden mt-20 lg:mt-[200px] scroll-mt-44 lg:scroll-mt-28 xl:max-w-[1045px] 2xl:max-w-[1760px] mx-auto select-none"
+      >
+        <!-- FAQ title -->
+        <h1 class="mt-6 poppins text-3xl lg:text-4xl text-[#18181B] text-center font-bold">
+          <span class="text-[#00BCFF]">Frequently</span>Asked Questions
+        </h1>
+        <!-- accordion -->
+        <div class="mt-10 lg:mt-20 space-y-5 px-4 lg:px-0">
+          <div class="collapse collapse-plus bg-[#F8F8F8] rounded-2xl">
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div
+              class="collapse-title poppins font-medium text-base text-[#18181B]"
+            >
+              1. The difference between var, let, and const
+            </div>
+            <div
+              class="collapse-content poppins font-normal text-base text-[#62748E]"
+            >
+              The difference between var, let, and const are: we can redeclare a
+              variable with var but we can not redeclare a variable with let and
+              const. var is hoisted with undefined but let and const are hoisted
+              with TDZ. There are also differences between let and const. We can
+              update a variable with let but we can not update a variable with
+              const.
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-[#F8F8F8]">
+            <input type="radio" name="my-accordion-3" />
+            <div
+              class="collapse-title poppins font-medium text-base text-[#18181B]"
+            >
+              2. The difference between map(), forEach(), and filter()
+            </div>
+            <div
+              class="collapse-content poppins font-normal text-base text-[#62748E]"
+            >
+              1. map() returns a new array after iterate over an array. 2.
+              foreach() iterate over an array but does not returns a new array.
+              3. filter() returns a new array after filtering over an array.
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-[#F8F8F8]">
+            <input type="radio" name="my-accordion-3" />
+            <div
+              class="collapse-title poppins font-medium text-base text-[#18181B]"
+            >
+              3. Explain arrow functions and how they are different from regular
+              functions
+            </div>
+            <div
+              class="collapse-content poppins font-normal text-base text-[#62748E]"
+            >
+              arrow functions are the modern way to write functions in
+              JavaScript. But arrow functions does not have access to this
+              keyword like regular functions have.
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-[#F8F8F8]">
+            <input type="radio" name="my-accordion-3" />
+            <div
+              class="collapse-title poppins font-medium text-base text-[#18181B]"
+            >
+              4. How JavaScript Promises work
+            </div>
+            <div
+              class="collapse-content poppins font-normal text-base text-[#62748E]"
+            >
+              JavaScript Promises are used to handle asynchronous operations.
+              The promise can be resolved and rejected. We can use .then() to
+              access the promise if the promise is resolved. And we can use
+              .catch() to catch exceptions that are thrown by the promise.
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-[#F8F8F8]">
+            <input type="radio" name="my-accordion-3" />
+            <div
+              class="collapse-title poppins font-medium text-base text-[#18181B]"
+            >
+              5. How closures work in JavaScript
+            </div>
+            <div
+              class="collapse-content poppins font-normal text-base text-[#62748E]"
+            >
+              If we return a function inside another function, the inner
+              function will have access to the outer function's variables. Even
+              after the outer function has finished executing the inner function
+              will remember the outer function's variables.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer section -->
+    <footer
+      id="footer"
+      class="mt-20 lg:mt-[200px] h-[325px] container max-w-screen border-t-[3px] border-t-[#FFEBEB] select-none"
+    >
+      <!--container -->
+      <div
+        class="h-full xl:max-w-[1045px] 2xl:max-w-[1760px] mx-auto flex flex-col lg:flex-row justify-evenly lg:justify-between items-center"
+      >
+        <!-- footer details container-->
+        <div class="space-y-5">
+          <div>
+            <h1 class="flex items-center">
+              <span class="poppins text-xl text-[#18181B] font-semibold"
+                >English</span
+              >
+              <span class="w-10 h-10"
+                ><img
+                  class="object-cover"
+                  src="./assets/logo.png"
+                  alt="nav-logo"
+              /></span>
+              <span class="tiro text-xl text-[#000000] font-normal"
+                >জানালা</span
+              >
+            </h1>
+          </div>
+          <div class="space-y-2">
+            <h2 class="hind text-xl text-[#000000] font-medium">
+              ইংরেজি শিখুন সহজে
+            </h2>
+            <p class="hind text-base text-[#000000] font-normal">
+              Providing ED-Tech Applications since 2025
+            </p>
+          </div>
+        </div>
+
+        <!-- footer logo container-->
+        <div class="space-y-4 ">
+          <p class="poppins text-sm text-[#18181B] font-semibold opacity-[0.6px]">
+            Follow us
+          </p>
+          <div class="flex gap-4">
+            <!-- facebook icon    -->
+            <a href="https://www.facebook.com/ebad.shohag" target="_blank">
+              <i class="fa-brands fa-facebook text-[28px] font-normal"></i>
+            </a>
+            <!-- youtube icon -->
+            <a href="https://www.youtube.com/" target="_blank">
+              <i class="fa-brands fa-youtube text-[28px] font-normal"></i>
+            </a>
+            <!-- insta icon -->
+            <a href="https://www.instagram.com/scrapernerds/" target="_blank">
+              <i class="fa-brands fa-instagram text-[28px] font-normal"></i>
+            </a>
+            <!-- github icon -->
+            <a href="https://github.com/Ebadur-Rahman-Shohag" target="_blank">
+              <i class="fa-brands fa-github text-[28px] font-normal"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
